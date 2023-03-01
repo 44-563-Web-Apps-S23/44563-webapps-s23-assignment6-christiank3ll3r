@@ -6,20 +6,41 @@
 <h2>Getting input with radio buttons and checkboxes</h2>
 
     <form>
-        <input type="radio" id="rg1_red" name="color" value="red"   
+        <input type="radio" id="average" name="average" value="mean" onclick="chooseOp()"  
           checked >
-        <label for="rg1_red">Red</label></br>
+        <label for="rg1_red">Average</label></br>
       
-        <input type="radio" id="rg1_blue" name="color" 
-           value="blue">
-        <label for="rg1_blue">Blue</label></br>
+        <input type="radio" id="max" name="max" value="maximum" onclick="chooseOp()"
+           >
+        <label for="rg1_blue">Max</label></br>
       
-        <input type="radio" id="rg1_green" name="color"   
-           value="green">
-        <label for="rg1_green">Green</label></br>
+        <input type="radio" id="min" name="min"  value="minimum" onclick="chooseOp()"  
+           >
+        <label for="rg1_green">Min</label></br>
+
 
         <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+
+        <p id="result">This text will be replaced </p>
+
       </form>
+
+      <script>
+        function resolveCheck() {
+          console.log("Getting input")
+          cheese = document.getElementById("average").checked
+          olives = document.getElementById("max").checked
+          onions = document.getElementById("min").checked
+          confirmed = confirm("Are these the values? "+cheese+" and "+olives+" and "+onions)
+          
+          out = document.getElementById("result")
+          if(confirmed){
+              out.innerHTML = "Values were confirmed"
+          } else {
+              out.innerHTML = "Values were not confirmed"
+          }
+      }
+      </script>
       
       <form>
         <input type="checkbox" id="cb1_cheese" name="topping1"   
