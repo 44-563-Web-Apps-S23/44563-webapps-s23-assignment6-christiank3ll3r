@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> Assignment 6 - Candy</title>
+ </head>
+<body>
+
+<h2>Christian chooses candy</h2>
+
+<form>
+    <label for="form1_age">Dark Chocolate </label>
+    <input type ="checkbox" id="checkbox" name="Dark Chocolate" min=10 max=50 step=2 value=True> <br>
+
+    <label for="form1_nick">Nuts </label>
+    <input type ="checkbox" id="checkbox" name="Nuts" min=10 max=50 step=2 value=True autofocus> <br>
+
+    <label for="form1_nick">Chewy </label>
+    <input type ="checkbox" id="checkbox" name="Chewy" min=10 max=50 step=2 value=False autofocus> <br>
+
+    <input type="checkbox" id ="button" onclick="selectBox()" value="Select a box">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function selectBox (){
+    console.log("Getting form values")
+    my_candy_box= ""
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("checkbox")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
