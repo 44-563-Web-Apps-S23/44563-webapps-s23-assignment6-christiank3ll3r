@@ -39,7 +39,21 @@ function selectBox (){
         out.innerHTML = "Values were not confirmed"
     }
 }
+
+function updateBox() {
+    size = document.getElementById(form1_size)
+}
+
 </script>
+
+<form>
+    <label for="form1_size">Enter the size: </label>
+    <input type ="text" id="checkbox" name="Enter the size" min=10 max=50 step=2 value="size"> <br>
+
+    <label for="form1_nick">Enter Price: </label>
+    <input type ="text" id="checkbox" name="Enter Price" min=10 max=50 step=2 value=True autofocus> <br>
+    <input type="checkbox" id ="button" onclick="updateBox()" value="Update the box">
+</form>
 
 </body>
 </html> 
